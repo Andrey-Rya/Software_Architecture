@@ -1,0 +1,14 @@
+package Fabric;
+
+import Interfaces.iGameItem;
+
+public abstract class ItemGenerator {
+   public ItemGenerator() {
+   }
+
+   public abstract iGameItem createItem();
+
+   public void openReward() {
+      this.createItem().open();
+   }
+}
