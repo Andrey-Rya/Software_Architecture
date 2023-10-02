@@ -1,0 +1,10 @@
+package Product;
+
+public class Star extends ItemReward {
+   public Star() {
+   }
+
+   public void open() {
+      System.out.println("It's Star Reward");
+   }
+}
