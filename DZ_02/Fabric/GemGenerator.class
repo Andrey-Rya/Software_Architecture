@@ -1,0 +1,13 @@
+package Fabric;
+
+import Interfaces.iGameItem;
+import Product.Gem;
+
+public class GemGenerator extends ItemGenerator {
+   public GemGenerator() {
+   }
+
+   public iGameItem createItem() {
+      return new Gem();
+   }
+}
