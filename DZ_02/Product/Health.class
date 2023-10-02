@@ -1,0 +1,10 @@
+package Product;
+
+public class Health extends ItemReward {
+   public Health() {
+   }
+
+   public void open() {
+      System.out.println("It's Health Reward");
+   }
+}
