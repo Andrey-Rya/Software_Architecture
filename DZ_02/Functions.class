@@ -1,0 +1,14 @@
+import Fabric.ItemGenerator;
+import java.util.List;
+
+public class Functions {
+   public Functions() {
+   }
+
+   public static void AddReward(List<ItemGenerator> var0, ItemGenerator var1, int var2) {
+      for(int var3 = 0; var3 < var2; ++var3) {
+         var0.add(var1);
+      }
+
+   }
+}
