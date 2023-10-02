@@ -1,0 +1,10 @@
+package Product;
+
+public class Ammunition extends ItemReward {
+   public Ammunition() {
+   }
+
+   public void open() {
+      System.out.println("It's Ammunition Reward");
+   }
+}
