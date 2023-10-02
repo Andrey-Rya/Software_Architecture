@@ -1,0 +1,10 @@
+package Product;
+
+public class Gem extends ItemReward {
+   public Gem() {
+   }
+
+   public void open() {
+      System.out.println("It's Gem Reward");
+   }
+}
