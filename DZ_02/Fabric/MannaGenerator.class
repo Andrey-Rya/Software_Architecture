@@ -1,0 +1,13 @@
+package Fabric;
+
+import Interfaces.iGameItem;
+import Product.Manna;
+
+public class MannaGenerator extends ItemGenerator {
+   public MannaGenerator() {
+   }
+
+   public iGameItem createItem() {
+      return new Manna();
+   }
+}
