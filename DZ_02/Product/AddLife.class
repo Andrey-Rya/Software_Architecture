@@ -1,0 +1,10 @@
+package Product;
+
+public class AddLife extends ItemReward {
+   public AddLife() {
+   }
+
+   public void open() {
+      System.out.println("It's Additional Life Reward");
+   }
+}
