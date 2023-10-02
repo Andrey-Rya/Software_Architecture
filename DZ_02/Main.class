@@ -1,0 +1,34 @@
+import Fabric.AddLifeGenerator;
+import Fabric.AmmunitionGenerator;
+import Fabric.GemGenerator;
+import Fabric.GoldGenerator;
+import Fabric.HealthGenerator;
+import Fabric.ItemGenerator;
+import Fabric.MannaGenerator;
+import Fabric.SilverGenerator;
+import Fabric.StarGenerator;
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Main {
+   public Main() {
+   }
+
+   public static void main(String[] var0) {
+      ArrayList var1 = new ArrayList();
+      Functions.AddReward(var1, new GoldGenerator(), 50);
+      Functions.AddReward(var1, new SilverGenerator(), 100);
+      Functions.AddReward(var1, new GemGenerator(), 10);
+      Functions.AddReward(var1, new AddLifeGenerator(), 3);
+      Functions.AddReward(var1, new AmmunitionGenerator(), 20);
+      Functions.AddReward(var1, new HealthGenerator(), 10);
+      Functions.AddReward(var1, new MannaGenerator(), 30);
+      Functions.AddReward(var1, new StarGenerator(), 100);
+      Random var2 = new Random();
+
+      for(int var3 = 0; var3 < 100; ++var3) {
+         ((ItemGenerator)var1.get(var2.nextInt(323))).openReward();
+      }
+
+   }
+}
