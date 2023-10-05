@@ -49,7 +49,7 @@ ISO/IEC/IEEE 29148:2018 Systems and software engineering — Life cycle processe
 
 (Обязательное) По разработанному коду нарисовать UML диаграмму. Сдаем в формате JPG. Онлайн ресурс редактор (https://online.visual-paradigm.com/)
 
-![UML_Diagram][UML_Diagram]
+![UML_Diagram.jpg][UML_Diagram]
 
 ### Задание №2
 
@@ -185,4 +185,8 @@ ISO/IEC/IEEE 29148:2018 Systems and software engineering — Life cycle processe
    }
    }
    Разорвать зависимость классов Car и PetrolEngine. У машины же может быть DieselEngine.
+
+Формат сдачи: ссылка на гитхаб проект
+
+[UML_Diagram]: UML_Diagram.jpg
 
