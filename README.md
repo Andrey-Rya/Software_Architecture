@@ -205,10 +205,10 @@ ISO/IEC/IEEE 29148:2018 Systems and software engineering — Life cycle processe
    ![UMLDomen.jpg][UMLDomen]
    ![UMLProvider.jpg][UMLProvider]
    ![UML_Diagram.jpg][UML_Diagra]
-[CoreDiag]: CoreDiag.png
-[UMLDomen]: UMLDomen.jpg
-[UMLProvider]: UMLProvider.jpg
-[UML_Diagram]: CUML_Diagram.jpg
+[CoreDiag]: (CoreDiag.png)
+[UMLDomen]: (UMLDomen.jpg)
+[UMLProvider]: (UMLProvider.jpg)
+[UML_Diagram]: (UML_Diagram.jpg)
    
  
 
