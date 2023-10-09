@@ -202,8 +202,8 @@ ISO/IEC/IEEE 29148:2018 Systems and software engineering — Life cycle processe
    Полностью разработанный проект должен собраться и выполниться. Общая UML диаграмма, проект и UML неразработанных
    классов приложена в материалах курса.
    ![CoreDiag.png](CoreDiag.png)
-   ![UMLDomen.jpg](UMLDomen)
-   ![UMLProvider.jpg](UMLProvider)
+   ![UMLDomen.jpg](UMLDomen.jpg)
+   ![UMLProvider.jpg](UMLProvider.jpg)
    
 
  
