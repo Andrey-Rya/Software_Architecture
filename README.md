@@ -201,9 +201,7 @@ ISO/IEC/IEEE 29148:2018 Systems and software engineering — Life cycle processe
 2. Разработать по UML диаграмме классы: TicketProvider и CashProvider
    Полностью разработанный проект должен собраться и выполниться. Общая UML диаграмма, проект и UML неразработанных
    классов приложена в материалах курса.
-   ![CoreDiag.png][CoreDiag]
-   
-   [CoreDiag]: (CoreDiag.png)
+   ![CoreDiag.png](CoreDiag.png)
    
    ![UMLDomen.jpg][UMLDomen]
    ![UMLProvider.jpg][UMLProvider]
