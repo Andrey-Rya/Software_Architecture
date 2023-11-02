@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.Group;
+import io.swagger.client.model.Schedule;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -34,14 +34,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GroupApi {
+public class ScheduleApi {
     private ApiClient apiClient;
 
-    public GroupApi() {
+    public ScheduleApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public GroupApi(ApiClient apiClient) {
+    public ScheduleApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -54,18 +54,18 @@ public class GroupApi {
     }
 
     /**
-     * Build call for addGroup
-     * @param body Добавление группы в базу данных (required)
+     * Build call for addSchedule
+     * @param body Добавление расписания в базу данных (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addGroupCall(Group body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addScheduleCall(Schedule body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/Group";
+        String localVarPath = "/Schedule";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -103,13 +103,13 @@ public class GroupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addGroupValidateBeforeCall(Group body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addScheduleValidateBeforeCall(Schedule body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling addGroup(Async)");
+            throw new ApiException("Missing the required parameter 'body' when calling addSchedule(Async)");
         }
         
-        com.squareup.okhttp.Call call = addGroupCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addScheduleCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -119,39 +119,39 @@ public class GroupApi {
     }
 
     /**
-     * Добавление группы
-     * Добавление группы в базу данных
-     * @param body Добавление группы в базу данных (required)
-     * @return Group
+     * Добавление расписания
+     * Добавление расписания в базу данных
+     * @param body Добавление расписания в базу данных (required)
+     * @return Schedule
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Group addGroup(Group body) throws ApiException {
-        ApiResponse<Group> resp = addGroupWithHttpInfo(body);
+    public Schedule addSchedule(Schedule body) throws ApiException {
+        ApiResponse<Schedule> resp = addScheduleWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
-     * Добавление группы
-     * Добавление группы в базу данных
-     * @param body Добавление группы в базу данных (required)
-     * @return ApiResponse&lt;Group&gt;
+     * Добавление расписания
+     * Добавление расписания в базу данных
+     * @param body Добавление расписания в базу данных (required)
+     * @return ApiResponse&lt;Schedule&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Group> addGroupWithHttpInfo(Group body) throws ApiException {
-        com.squareup.okhttp.Call call = addGroupValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+    public ApiResponse<Schedule> addScheduleWithHttpInfo(Schedule body) throws ApiException {
+        com.squareup.okhttp.Call call = addScheduleValidateBeforeCall(body, null, null);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Добавление группы (asynchronously)
-     * Добавление группы в базу данных
-     * @param body Добавление группы в базу данных (required)
+     * Добавление расписания (asynchronously)
+     * Добавление расписания в базу данных
+     * @param body Добавление расписания в базу данных (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addGroupAsync(Group body, final ApiCallback<Group> callback) throws ApiException {
+    public com.squareup.okhttp.Call addScheduleAsync(Schedule body, final ApiCallback<Schedule> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -172,25 +172,27 @@ public class GroupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addGroupValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+        com.squareup.okhttp.Call call = addScheduleValidateBeforeCall(body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for addGroup
+     * Build call for addSchedule
      * @param id  (required)
-     * @param userId  (required)
+     * @param dateTime  (required)
+     * @param mode  (required)
+     * @param robotId  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addGroupCall(Long id, Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addScheduleCall(Long id, String dateTime, Long mode, Long robotId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/Group";
+        String localVarPath = "/Schedule";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -200,8 +202,12 @@ public class GroupApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         if (id != null)
         localVarFormParams.put("id", id);
-        if (userId != null)
-        localVarFormParams.put("userId", userId);
+        if (dateTime != null)
+        localVarFormParams.put("dateTime", dateTime);
+        if (mode != null)
+        localVarFormParams.put("mode", mode);
+        if (robotId != null)
+        localVarFormParams.put("robotId", robotId);
 
         final String[] localVarAccepts = {
             "application/json", "application/xml"
@@ -232,17 +238,25 @@ public class GroupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addGroupValidateBeforeCall(Long id, Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addScheduleValidateBeforeCall(Long id, String dateTime, Long mode, Long robotId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling addGroup(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling addSchedule(Async)");
         }
-        // verify the required parameter 'userId' is set
-        if (userId == null) {
-            throw new ApiException("Missing the required parameter 'userId' when calling addGroup(Async)");
+        // verify the required parameter 'dateTime' is set
+        if (dateTime == null) {
+            throw new ApiException("Missing the required parameter 'dateTime' when calling addSchedule(Async)");
+        }
+        // verify the required parameter 'mode' is set
+        if (mode == null) {
+            throw new ApiException("Missing the required parameter 'mode' when calling addSchedule(Async)");
+        }
+        // verify the required parameter 'robotId' is set
+        if (robotId == null) {
+            throw new ApiException("Missing the required parameter 'robotId' when calling addSchedule(Async)");
         }
         
-        com.squareup.okhttp.Call call = addGroupCall(id, userId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addScheduleCall(id, dateTime, mode, robotId, progressListener, progressRequestListener);
         return call;
 
         
@@ -252,42 +266,48 @@ public class GroupApi {
     }
 
     /**
-     * Добавление группы
-     * Добавление группы в базу данных
+     * Добавление расписания
+     * Добавление расписания в базу данных
      * @param id  (required)
-     * @param userId  (required)
-     * @return Group
+     * @param dateTime  (required)
+     * @param mode  (required)
+     * @param robotId  (required)
+     * @return Schedule
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Group addGroup(Long id, Long userId) throws ApiException {
-        ApiResponse<Group> resp = addGroupWithHttpInfo(id, userId);
+    public Schedule addSchedule(Long id, String dateTime, Long mode, Long robotId) throws ApiException {
+        ApiResponse<Schedule> resp = addScheduleWithHttpInfo(id, dateTime, mode, robotId);
         return resp.getData();
     }
 
     /**
-     * Добавление группы
-     * Добавление группы в базу данных
+     * Добавление расписания
+     * Добавление расписания в базу данных
      * @param id  (required)
-     * @param userId  (required)
-     * @return ApiResponse&lt;Group&gt;
+     * @param dateTime  (required)
+     * @param mode  (required)
+     * @param robotId  (required)
+     * @return ApiResponse&lt;Schedule&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Group> addGroupWithHttpInfo(Long id, Long userId) throws ApiException {
-        com.squareup.okhttp.Call call = addGroupValidateBeforeCall(id, userId, null, null);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+    public ApiResponse<Schedule> addScheduleWithHttpInfo(Long id, String dateTime, Long mode, Long robotId) throws ApiException {
+        com.squareup.okhttp.Call call = addScheduleValidateBeforeCall(id, dateTime, mode, robotId, null, null);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Добавление группы (asynchronously)
-     * Добавление группы в базу данных
+     * Добавление расписания (asynchronously)
+     * Добавление расписания в базу данных
      * @param id  (required)
-     * @param userId  (required)
+     * @param dateTime  (required)
+     * @param mode  (required)
+     * @param robotId  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addGroupAsync(Long id, Long userId, final ApiCallback<Group> callback) throws ApiException {
+    public com.squareup.okhttp.Call addScheduleAsync(Long id, String dateTime, Long mode, Long robotId, final ApiCallback<Schedule> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -308,33 +328,33 @@ public class GroupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addGroupValidateBeforeCall(id, userId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+        com.squareup.okhttp.Call call = addScheduleValidateBeforeCall(id, dateTime, mode, robotId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for deleteGroup
-     * @param groupId ID - идентификатор группы (required)
-     * @param groupId  (optional)
+     * Build call for deleteSchedule
+     * @param id ID - идентификатор расписания (required)
+     * @param id  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteGroupCall(Long groupId, String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteScheduleCall(Long id, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/Group/deleteById/{groupId}"
-            .replaceAll("\\{" + "groupId" + "\\}", apiClient.escapeString(groupId.toString()));
+        String localVarPath = "/Schedule/deleteById/{Id}"
+            .replaceAll("\\{" + "Id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (groupId != null)
-        localVarHeaderParams.put("groupId", apiClient.parameterToString(groupId));
+        if (id != null)
+        localVarHeaderParams.put("Id", apiClient.parameterToString(id));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -367,13 +387,13 @@ public class GroupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteGroupValidateBeforeCall(Long groupId, String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'groupId' is set
-        if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling deleteGroup(Async)");
+    private com.squareup.okhttp.Call deleteScheduleValidateBeforeCall(Long id, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteSchedule(Async)");
         }
         
-        com.squareup.okhttp.Call call = deleteGroupCall(groupId, groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteScheduleCall(id, id, progressListener, progressRequestListener);
         return call;
 
         
@@ -383,39 +403,39 @@ public class GroupApi {
     }
 
     /**
-     * Удаление группы по ID
-     * Удаление группы в базе данных
-     * @param groupId ID - идентификатор группы (required)
-     * @param groupId  (optional)
+     * Удаление расписания по ID
+     * Удаление расписания из базы данных
+     * @param id ID - идентификатор расписания (required)
+     * @param id  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteGroup(Long groupId, String groupId) throws ApiException {
-        deleteGroupWithHttpInfo(groupId, groupId);
+    public void deleteSchedule(Long id, String id) throws ApiException {
+        deleteScheduleWithHttpInfo(id, id);
     }
 
     /**
-     * Удаление группы по ID
-     * Удаление группы в базе данных
-     * @param groupId ID - идентификатор группы (required)
-     * @param groupId  (optional)
+     * Удаление расписания по ID
+     * Удаление расписания из базы данных
+     * @param id ID - идентификатор расписания (required)
+     * @param id  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteGroupWithHttpInfo(Long groupId, String groupId) throws ApiException {
-        com.squareup.okhttp.Call call = deleteGroupValidateBeforeCall(groupId, groupId, null, null);
+    public ApiResponse<Void> deleteScheduleWithHttpInfo(Long id, String id) throws ApiException {
+        com.squareup.okhttp.Call call = deleteScheduleValidateBeforeCall(id, id, null, null);
         return apiClient.execute(call);
     }
 
     /**
-     * Удаление группы по ID (asynchronously)
-     * Удаление группы в базе данных
-     * @param groupId ID - идентификатор группы (required)
-     * @param groupId  (optional)
+     * Удаление расписания по ID (asynchronously)
+     * Удаление расписания из базы данных
+     * @param id ID - идентификатор расписания (required)
+     * @param id  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteGroupAsync(Long groupId, String groupId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteScheduleAsync(Long id, String id, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -436,24 +456,24 @@ public class GroupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteGroupValidateBeforeCall(groupId, groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteScheduleValidateBeforeCall(id, id, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
-     * Build call for getGroupById
-     * @param groupId Поиск группы (required)
+     * Build call for getScheduleById
+     * @param id ID - идентификатор пользователя (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getGroupByIdCall(Long groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getScheduleByIdCall(Long id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/Group/findById/{groupId}"
-            .replaceAll("\\{" + "groupId" + "\\}", apiClient.escapeString(groupId.toString()));
+        String localVarPath = "/Schedule/findById/{Id}"
+            .replaceAll("\\{" + "Id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -491,13 +511,13 @@ public class GroupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getGroupByIdValidateBeforeCall(Long groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'groupId' is set
-        if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling getGroupById(Async)");
+    private com.squareup.okhttp.Call getScheduleByIdValidateBeforeCall(Long id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getScheduleById(Async)");
         }
         
-        com.squareup.okhttp.Call call = getGroupByIdCall(groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getScheduleByIdCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -507,39 +527,39 @@ public class GroupApi {
     }
 
     /**
-     * Поиск группы по ID
-     * Поиск группы в базе данных
-     * @param groupId Поиск группы (required)
-     * @return Group
+     * Поиск расписания по ID
+     * Поиск расписания в базе данных
+     * @param id ID - идентификатор пользователя (required)
+     * @return Schedule
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Group getGroupById(Long groupId) throws ApiException {
-        ApiResponse<Group> resp = getGroupByIdWithHttpInfo(groupId);
+    public Schedule getScheduleById(Long id) throws ApiException {
+        ApiResponse<Schedule> resp = getScheduleByIdWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
-     * Поиск группы по ID
-     * Поиск группы в базе данных
-     * @param groupId Поиск группы (required)
-     * @return ApiResponse&lt;Group&gt;
+     * Поиск расписания по ID
+     * Поиск расписания в базе данных
+     * @param id ID - идентификатор пользователя (required)
+     * @return ApiResponse&lt;Schedule&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Group> getGroupByIdWithHttpInfo(Long groupId) throws ApiException {
-        com.squareup.okhttp.Call call = getGroupByIdValidateBeforeCall(groupId, null, null);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+    public ApiResponse<Schedule> getScheduleByIdWithHttpInfo(Long id) throws ApiException {
+        com.squareup.okhttp.Call call = getScheduleByIdValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Поиск группы по ID (asynchronously)
-     * Поиск группы в базе данных
-     * @param groupId Поиск группы (required)
+     * Поиск расписания по ID (asynchronously)
+     * Поиск расписания в базе данных
+     * @param id ID - идентификатор пользователя (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getGroupByIdAsync(Long groupId, final ApiCallback<Group> callback) throws ApiException {
+    public com.squareup.okhttp.Call getScheduleByIdAsync(Long id, final ApiCallback<Schedule> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -560,24 +580,24 @@ public class GroupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getGroupByIdValidateBeforeCall(groupId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+        com.squareup.okhttp.Call call = getScheduleByIdValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for updateGroup
-     * @param body Обновление группы (required)
+     * Build call for updateSchedule
+     * @param body Обновление расписания в базе данных (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateGroupCall(Group body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateScheduleCall(Schedule body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/Group";
+        String localVarPath = "/Schedule";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -615,13 +635,13 @@ public class GroupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateGroupValidateBeforeCall(Group body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateScheduleValidateBeforeCall(Schedule body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'body' is set
         if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling updateGroup(Async)");
+            throw new ApiException("Missing the required parameter 'body' when calling updateSchedule(Async)");
         }
         
-        com.squareup.okhttp.Call call = updateGroupCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateScheduleCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -631,39 +651,39 @@ public class GroupApi {
     }
 
     /**
-     * Обновление группы пользователей
-     * Обновить группу пользователей
-     * @param body Обновление группы (required)
-     * @return Group
+     * Обновление расписания уборки
+     * Обновление расписания в базе данных
+     * @param body Обновление расписания в базе данных (required)
+     * @return Schedule
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Group updateGroup(Group body) throws ApiException {
-        ApiResponse<Group> resp = updateGroupWithHttpInfo(body);
+    public Schedule updateSchedule(Schedule body) throws ApiException {
+        ApiResponse<Schedule> resp = updateScheduleWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
-     * Обновление группы пользователей
-     * Обновить группу пользователей
-     * @param body Обновление группы (required)
-     * @return ApiResponse&lt;Group&gt;
+     * Обновление расписания уборки
+     * Обновление расписания в базе данных
+     * @param body Обновление расписания в базе данных (required)
+     * @return ApiResponse&lt;Schedule&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Group> updateGroupWithHttpInfo(Group body) throws ApiException {
-        com.squareup.okhttp.Call call = updateGroupValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+    public ApiResponse<Schedule> updateScheduleWithHttpInfo(Schedule body) throws ApiException {
+        com.squareup.okhttp.Call call = updateScheduleValidateBeforeCall(body, null, null);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Обновление группы пользователей (asynchronously)
-     * Обновить группу пользователей
-     * @param body Обновление группы (required)
+     * Обновление расписания уборки (asynchronously)
+     * Обновление расписания в базе данных
+     * @param body Обновление расписания в базе данных (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateGroupAsync(Group body, final ApiCallback<Group> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateScheduleAsync(Schedule body, final ApiCallback<Schedule> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -684,25 +704,27 @@ public class GroupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateGroupValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+        com.squareup.okhttp.Call call = updateScheduleValidateBeforeCall(body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for updateGroup
+     * Build call for updateSchedule
      * @param id  (required)
-     * @param userId  (required)
+     * @param dateTime  (required)
+     * @param mode  (required)
+     * @param robotId  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateGroupCall(Long id, Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateScheduleCall(Long id, String dateTime, Long mode, Long robotId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/Group";
+        String localVarPath = "/Schedule";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -712,8 +734,12 @@ public class GroupApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         if (id != null)
         localVarFormParams.put("id", id);
-        if (userId != null)
-        localVarFormParams.put("userId", userId);
+        if (dateTime != null)
+        localVarFormParams.put("dateTime", dateTime);
+        if (mode != null)
+        localVarFormParams.put("mode", mode);
+        if (robotId != null)
+        localVarFormParams.put("robotId", robotId);
 
         final String[] localVarAccepts = {
             "application/json", "application/xml"
@@ -744,17 +770,25 @@ public class GroupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateGroupValidateBeforeCall(Long id, Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateScheduleValidateBeforeCall(Long id, String dateTime, Long mode, Long robotId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling updateGroup(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling updateSchedule(Async)");
         }
-        // verify the required parameter 'userId' is set
-        if (userId == null) {
-            throw new ApiException("Missing the required parameter 'userId' when calling updateGroup(Async)");
+        // verify the required parameter 'dateTime' is set
+        if (dateTime == null) {
+            throw new ApiException("Missing the required parameter 'dateTime' when calling updateSchedule(Async)");
+        }
+        // verify the required parameter 'mode' is set
+        if (mode == null) {
+            throw new ApiException("Missing the required parameter 'mode' when calling updateSchedule(Async)");
+        }
+        // verify the required parameter 'robotId' is set
+        if (robotId == null) {
+            throw new ApiException("Missing the required parameter 'robotId' when calling updateSchedule(Async)");
         }
         
-        com.squareup.okhttp.Call call = updateGroupCall(id, userId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateScheduleCall(id, dateTime, mode, robotId, progressListener, progressRequestListener);
         return call;
 
         
@@ -764,42 +798,48 @@ public class GroupApi {
     }
 
     /**
-     * Обновление группы пользователей
-     * Обновить группу пользователей
+     * Обновление расписания уборки
+     * Обновление расписания в базе данных
      * @param id  (required)
-     * @param userId  (required)
-     * @return Group
+     * @param dateTime  (required)
+     * @param mode  (required)
+     * @param robotId  (required)
+     * @return Schedule
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Group updateGroup(Long id, Long userId) throws ApiException {
-        ApiResponse<Group> resp = updateGroupWithHttpInfo(id, userId);
+    public Schedule updateSchedule(Long id, String dateTime, Long mode, Long robotId) throws ApiException {
+        ApiResponse<Schedule> resp = updateScheduleWithHttpInfo(id, dateTime, mode, robotId);
         return resp.getData();
     }
 
     /**
-     * Обновление группы пользователей
-     * Обновить группу пользователей
+     * Обновление расписания уборки
+     * Обновление расписания в базе данных
      * @param id  (required)
-     * @param userId  (required)
-     * @return ApiResponse&lt;Group&gt;
+     * @param dateTime  (required)
+     * @param mode  (required)
+     * @param robotId  (required)
+     * @return ApiResponse&lt;Schedule&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Group> updateGroupWithHttpInfo(Long id, Long userId) throws ApiException {
-        com.squareup.okhttp.Call call = updateGroupValidateBeforeCall(id, userId, null, null);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+    public ApiResponse<Schedule> updateScheduleWithHttpInfo(Long id, String dateTime, Long mode, Long robotId) throws ApiException {
+        com.squareup.okhttp.Call call = updateScheduleValidateBeforeCall(id, dateTime, mode, robotId, null, null);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Обновление группы пользователей (asynchronously)
-     * Обновить группу пользователей
+     * Обновление расписания уборки (asynchronously)
+     * Обновление расписания в базе данных
      * @param id  (required)
-     * @param userId  (required)
+     * @param dateTime  (required)
+     * @param mode  (required)
+     * @param robotId  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateGroupAsync(Long id, Long userId, final ApiCallback<Group> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateScheduleAsync(Long id, String dateTime, Long mode, Long robotId, final ApiCallback<Schedule> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -820,8 +860,8 @@ public class GroupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateGroupValidateBeforeCall(id, userId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+        com.squareup.okhttp.Call call = updateScheduleValidateBeforeCall(id, dateTime, mode, robotId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Schedule>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
