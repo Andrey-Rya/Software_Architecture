@@ -22,19 +22,25 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Group
+ * Schedule
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-30T08:22:49.388542894Z[GMT]")
 
-public class Group {
+public class Schedule {
   @SerializedName("id")
   private Long id = null;
 
-  @SerializedName("userId")
-  private Long userId = null;
+  @SerializedName("dateTime")
+  private String dateTime = null;
 
-  public Group id(Long id) {
+  @SerializedName("mode")
+  private Long mode = null;
+
+  @SerializedName("robotId")
+  private Long robotId = null;
+
+  public Schedule id(Long id) {
     this.id = id;
     return this;
   }
@@ -52,22 +58,58 @@ public class Group {
     this.id = id;
   }
 
-  public Group userId(Long userId) {
-    this.userId = userId;
+  public Schedule dateTime(String dateTime) {
+    this.dateTime = dateTime;
     return this;
   }
 
    /**
-   * Get userId
-   * @return userId
+   * Get dateTime
+   * @return dateTime
   **/
-  @Schema(example = "10", required = true, description = "")
-  public Long getUserId() {
-    return userId;
+  @Schema(example = "dd.mm.yyyy-hh:mm:ss", required = true, description = "")
+  public String getDateTime() {
+    return dateTime;
   }
 
-  public void setUserId(Long userId) {
-    this.userId = userId;
+  public void setDateTime(String dateTime) {
+    this.dateTime = dateTime;
+  }
+
+  public Schedule mode(Long mode) {
+    this.mode = mode;
+    return this;
+  }
+
+   /**
+   * Get mode
+   * @return mode
+  **/
+  @Schema(example = "10", required = true, description = "")
+  public Long getMode() {
+    return mode;
+  }
+
+  public void setMode(Long mode) {
+    this.mode = mode;
+  }
+
+  public Schedule robotId(Long robotId) {
+    this.robotId = robotId;
+    return this;
+  }
+
+   /**
+   * Get robotId
+   * @return robotId
+  **/
+  @Schema(example = "10", required = true, description = "")
+  public Long getRobotId() {
+    return robotId;
+  }
+
+  public void setRobotId(Long robotId) {
+    this.robotId = robotId;
   }
 
 
@@ -79,24 +121,28 @@ public class Group {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Group group = (Group) o;
-    return Objects.equals(this.id, group.id) &&
-        Objects.equals(this.userId, group.userId);
+    Schedule schedule = (Schedule) o;
+    return Objects.equals(this.id, schedule.id) &&
+        Objects.equals(this.dateTime, schedule.dateTime) &&
+        Objects.equals(this.mode, schedule.mode) &&
+        Objects.equals(this.robotId, schedule.robotId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userId);
+    return Objects.hash(id, dateTime, mode, robotId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Group {\n");
+    sb.append("class Schedule {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
+    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+    sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

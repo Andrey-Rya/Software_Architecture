@@ -22,19 +22,25 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * Group
+ * User
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-08-30T08:22:49.388542894Z[GMT]")
 
-public class Group {
+public class User {
   @SerializedName("id")
   private Long id = null;
 
-  @SerializedName("userId")
-  private Long userId = null;
+  @SerializedName("email")
+  private String email = null;
 
-  public Group id(Long id) {
+  @SerializedName("passHash")
+  private Long passHash = null;
+
+  @SerializedName("robotSNHash")
+  private Long robotSNHash = null;
+
+  public User id(Long id) {
     this.id = id;
     return this;
   }
@@ -52,22 +58,58 @@ public class Group {
     this.id = id;
   }
 
-  public Group userId(Long userId) {
-    this.userId = userId;
+  public User email(String email) {
+    this.email = email;
     return this;
   }
 
    /**
-   * Get userId
-   * @return userId
+   * Get email
+   * @return email
   **/
-  @Schema(example = "10", required = true, description = "")
-  public Long getUserId() {
-    return userId;
+  @Schema(example = "somemail@mail.ru", required = true, description = "")
+  public String getEmail() {
+    return email;
   }
 
-  public void setUserId(Long userId) {
-    this.userId = userId;
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public User passHash(Long passHash) {
+    this.passHash = passHash;
+    return this;
+  }
+
+   /**
+   * Get passHash
+   * @return passHash
+  **/
+  @Schema(example = "23412", required = true, description = "")
+  public Long getPassHash() {
+    return passHash;
+  }
+
+  public void setPassHash(Long passHash) {
+    this.passHash = passHash;
+  }
+
+  public User robotSNHash(Long robotSNHash) {
+    this.robotSNHash = robotSNHash;
+    return this;
+  }
+
+   /**
+   * Get robotSNHash
+   * @return robotSNHash
+  **/
+  @Schema(example = "23412", required = true, description = "")
+  public Long getRobotSNHash() {
+    return robotSNHash;
+  }
+
+  public void setRobotSNHash(Long robotSNHash) {
+    this.robotSNHash = robotSNHash;
   }
 
 
@@ -79,24 +121,28 @@ public class Group {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Group group = (Group) o;
-    return Objects.equals(this.id, group.id) &&
-        Objects.equals(this.userId, group.userId);
+    User user = (User) o;
+    return Objects.equals(this.id, user.id) &&
+        Objects.equals(this.email, user.email) &&
+        Objects.equals(this.passHash, user.passHash) &&
+        Objects.equals(this.robotSNHash, user.robotSNHash);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userId);
+    return Objects.hash(id, email, passHash, robotSNHash);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Group {\n");
+    sb.append("class User {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    passHash: ").append(toIndentedString(passHash)).append("\n");
+    sb.append("    robotSNHash: ").append(toIndentedString(robotSNHash)).append("\n");
     sb.append("}");
     return sb.toString();
   }
