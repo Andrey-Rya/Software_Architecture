@@ -1,10 +1,12 @@
-# Group
+# User
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**user_id** | **int** |  | 
+**email** | **str** |  | 
+**pass_hash** | **int** |  | 
+**robot_sn_hash** | **int** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
